@@ -16,7 +16,7 @@ import java.util.Date;
 /**
  * <p>Description: [编码生成工具类]</p>
  * Created on 2019年08月08日
- * @author <a href="mailto: hexiaobo@camelotchina.com">贺小波</a>
+ * @author <a href="mailto: zhuhong45@camelotchina.com">朱鸿</a>
  * @version 1.0
  * Copyright (c) 2019 北京柯莱特科技有限公司
  */

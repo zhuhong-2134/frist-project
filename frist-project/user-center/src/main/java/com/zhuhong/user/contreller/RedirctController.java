@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * <p>Description: [类功能描述]</p>
  * Created on 2020/1/7
  *
- * @author <a href="mailto: zhuhong45@camelotchina.com">朱鸿</a>
+ * @author <a href="mailto: xienan@camelotchina.com">谢楠</a>
  * @version 1.0
  * Copyright (c) 2020 北京柯莱特科技有限公司
  */

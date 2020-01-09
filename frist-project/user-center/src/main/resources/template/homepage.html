@@ -10,12 +10,12 @@
 <div class="main-wrapper">
     <header>
         <nav>
-            <ul>
-                <li><a href="#" class="active">首页</a></li>
-                <li><a href="#">精品博客</a></li>
-                <li><a href="#">微博</a></li>
-                <li><a href="#">留言</a></li>
-            </ul>
+<!--            <ul>-->
+<!--                <li><a href="#" class="active">首页</a></li>-->
+<!--                <li><a href="#">精品博客</a></li>-->
+<!--                <li><a href="#">微博</a></li>-->
+<!--                <li><a href="#">留言</a></li>-->
+<!--            </ul>-->
         </nav>
         <div id="banner">
             <div class="inner">
@@ -29,34 +29,45 @@
         </div>
     </header>
 
-    <script>
-        $(document).ready(function () {
-            $("#login").click(function () {
-                $("#afterlogin").display("block");
-            })
-        })
-    </script>
 
-    <div id="afterlogin">
-        <h3>登陆</h3>
-        <button></button>
+    <div class="table-a">
+        <table class="afterlogin">
+            <tr>
+                <td>账号</td>
+                <td><input type="text" value="请输入您的账号" class="admin" /></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td>
+                    <input type="text" value="请输入您的密码"id="login_showPwd" />
+                    <input type="password"id="login_password" style="display: none"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="登录" />
+                    <input type="button" value="重置" id ="btn_res"/>
+                </td>
+            </tr>
+        </table>
     </div>
+
     <div class="content"><!--内容开始-->
-        <section class="green-section">
-            <div class="wrapper">
-                <div>
-                    <h2>一个标题</h2>
-                    <div class="hr"></div>
-                    <p class="sub-heading">lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit.</p>
-                </div>
-                <div class="icon-group">
-                    <span class="icon">item1</span>
-                    <span class="icon">item2</span>
-                    <span class="icon">item3</span>
-                </div>
-            </div>
-        </section>
+<!--        <section class="green-section">-->
+<!--            <div class="wrapper">-->
+<!--                <div>-->
+<!--                    <h2>一个标题</h2>-->
+<!--                    <div class="hr"></div>-->
+<!--                    <p class="sub-heading">lorem ipsum dolor sit amet,-->
+<!--                        consectetur adipisicing elit.</p>-->
+<!--                </div>-->
+<!--                <div class="icon-group">-->
+<!--                    <span class="icon">item1</span>-->
+<!--                    <span class="icon">item2</span>-->
+<!--                    <span class="icon">item3</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
         <section class="gray-section">
 
             <div class="article-preview">
@@ -177,4 +188,16 @@
         </footer><!--页脚结束-->
     </div>
 </body>
+
+<script>
+    var login = document.getElementById("login")
+    var tab  = document.getElementById("table-a")
+    login.onclick =  function () {
+        login.style.visibility = "hidden";
+        tab.style.display = "block";
+    }
+</script>
+
+
+
 </html>

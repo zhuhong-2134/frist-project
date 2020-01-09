@@ -60,6 +60,11 @@ nav ul li.logo{
     top: 160px;
 }
 
+.table-a{
+    display: none;
+}
+
+
 #banner .inner h1
 {
     margin: 0;
@@ -140,6 +145,7 @@ p
     border-collapse: 6px;
     background: #18a;
 }
+
 
 .green-section
 {

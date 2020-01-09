@@ -1,8 +1,9 @@
 package com.zhuhong.utils;
 
-import com.fehorizon.commonService.common.constants.SysConstant;
-import com.fehorizon.commonService.model.enums.CodeNumGenerateEnum;
-import com.fehorizon.commonService.model.enums.PrincipalEnum;
+
+import com.zhuhong.constants.SysConstant;
+import com.zhuhong.enums.CodeNumGenerateEnum;
+import com.zhuhong.enums.PrincipalEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

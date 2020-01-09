@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/homepage.css">
+    <!--    <link rel="stylesheet" href="main.css">-->
+</head>
+<body>
+<div class="main-wrapper">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">精品博客</a></li>
+                <li><a href="#">微博</a></li>
+                <li><a href="#">留言</a></li>
+            </ul>
+        </nav>
+        <div id="banner">
+            <div class="inner">
+                <h1></h1>
+                <p class="sub-heading">围观其实也是一种态度，你觉得呢？</p>
+                <button class="main-btn" id="login">登陆</button>
+                <!-- <div class="more">
+                    更多
+                </div> -->
+            </div>
+        </div>
+    </header>
+
+    <script>
+        $(document).ready(function () {
+            $("#login").click(function () {
+                $("#afterlogin").display("block");
+            })
+        })
+    </script>
+
+    <div id="afterlogin">
+        <h3>登陆</h3>
+        <button></button>
+    </div>
+    <div class="content"><!--内容开始-->
+        <section class="green-section">
+            <div class="wrapper">
+                <div>
+                    <h2>一个标题</h2>
+                    <div class="hr"></div>
+                    <p class="sub-heading">lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit.</p>
+                </div>
+                <div class="icon-group">
+                    <span class="icon">item1</span>
+                    <span class="icon">item2</span>
+                    <span class="icon">item3</span>
+                </div>
+            </div>
+        </section>
+        <section class="gray-section">
+
+            <div class="article-preview">
+                <div class="img-section">
+                    <img src="../static/images/Scenery.jpg" alt=""></div>
+                <div class="text-section">
+                    <h2>星空</h2>
+<!--                    <div class="sub-heading">我是副标题你好</div>-->
+                    <p>极光是南北极地区特有的一种大气发光现象。极光在东西方的神话传说中都留下了美丽的身影，现代科学的发展，使人类能够用理性的眼光看待极光，对它作出科学的解释。</p>
+                </div>
+
+            </div>
+
+            <div class="article-preview">
+
+                <div class="text-section">
+                    <h2>云</h2>
+<!--                    <div class="sub-heading">我是副标题你好</div>-->
+                    <p>如峰形状在西郊，</p>
+                    <p>未见从龙上泬寥。</p>
+                    <p>多谢好风吹起后，</p>
+                    <p>化为甘雨济田苗。</p>
+                </div>
+
+                <div class="img-section">
+                    <img src="../static/images/Scenery3.jpg" alt="">
+                </div>
+
+            </div>
+
+            <div class="article-preview">
+                <div class="img-section">
+                    <img src="../static/images/Scenery2.jpg" alt="">
+                </div>
+                <div class="text-section">
+                    <h2>极光</h2>
+                    <!--                    <div class="sub-heading">我是副标题你好</div>-->
+                    <p>极光是南北极地区特有的一种大气发光现象。极光在东西方的神话传说中都留下了美丽的身影，现代科学的发展，使人类能够用理性的眼光看待极光，对它作出科学的解释。</p>
+                </div>
+            </div>
+        </section>
+
+        <!--        <section class="purple-section">-->
+        <!--            <div class="wrapper">-->
+        <!--                <div class="heading-wrspper">-->
+        <!--                    <h2>又是一个标题</h2>-->
+        <!--                    <div class="hr"></div>-->
+        <!--                    <div class="sub-heading">-->
+        <!--                        Formally established in 1946, the aim is to promote cooperation among countries through-->
+        <!--                        education, science and culture, and contribute to world peace and security. According to the-->
+        <!--                        introduction, UNESCO has 195 Member States and 58 executive board members.-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <div class="card-group-->
+        <!--			clearfix">-->
+        <!--                    <div class="card">-->
+        <!--                        <h3>标题三</h3>-->
+        <!--                        <p>Formally established in 1946, the aim is to promote cooperation among countries through-->
+        <!--                            education, science and culture, and contribute to world peace and security. According to the-->
+        <!--                            introduction, UNESCO has 195 Member States and 58 executive board members.</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="card">-->
+        <!--                        <h3>标题三</h3>-->
+        <!--                        <p>Formally established in 1946, the aim is to promote cooperation among countries through-->
+        <!--                            education, science and culture, and contribute to world peace and security. According to the-->
+        <!--                            introduction, UNESCO has 195 Member States and 58 executive board members.</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-group-->
+        <!--			clearfix">-->
+        <!--                    <div class="card">-->
+        <!--                        <h3>标题三</h3>-->
+        <!--                        <p>Formally established in 1946, the aim is to promote cooperation among countries through-->
+        <!--                            education, science and culture, and contribute to world peace and security. According to the-->
+        <!--                            introduction, UNESCO has 195 Member States and 58 executive board members.</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="card">-->
+        <!--                        <h3>标题三</h3>-->
+        <!--                        <p>Formally established in 1946, the aim is to promote cooperation among countries through-->
+        <!--                            education, science and culture, and contribute to world peace and security. According to the-->
+        <!--                            introduction, UNESCO has 195 Member States and 58 executive board members.</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+
+        <!--                <div class="card-group-->
+        <!--			clearfix">-->
+        <!--                    <div class="card">-->
+        <!--                        <h3>标题三</h3>-->
+        <!--                        <p>Formally established in 1946, the aim is to promote cooperation among countries through-->
+        <!--                            education, science and culture, and contribute to world peace and security. According to the-->
+        <!--                            introduction, UNESCO has 195 Member States and 58 executive board members.</p>-->
+        <!--                    </div>-->
+        <!--                    <div class="card">-->
+        <!--                        <h3>标题三</h3>-->
+        <!--                        <p>Formally established in 1946, the aim is to promote cooperation among countries through-->
+        <!--                            education, science and culture, and contribute to world peace and security. According to the-->
+        <!--                            introduction, UNESCO has 195 Member States and 58 executive board members.</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </section>-->
+            </div><!--内容结束-->
+
+        <footer>
+            <!--页脚开始-->
+            <ul class="share-group">
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+                <li>item4</li>
+                <li>item5</li>
+            </ul>
+
+            <div class="copy">
+                &copy 朱鸿一-2020
+            </div>
+        </footer><!--页脚结束-->
+    </div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 package com.zhuhong.utils;
 
-import com.fehorizon.commonService.common.vo.DateCompare;
+import com.zhuhong.vo.DateCompare;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.DateFormat;
@@ -15,7 +15,7 @@ import java.util.*;
  * <p>Description: [时间工具类]</p>
  * Created on 2019年8月7日
  *
- * @author <a href="mailto: cuichunsong@camelotchina.com">崔春松</a>
+ * @author <a href="mailto: zhuhong45@camelotchina.com">朱鸿</a>
  * @version 1.0
  * Copyright (c) 2019 北京柯莱特科技有限公司
  */
@@ -243,7 +243,7 @@ public class DateUtils {
 	 * @return: java.lang.Long
 	 * Created on 2019年08月16日
 	 * @version 1.0
-	 * @author: 贺小波
+	 * @author:
 	 * Copyright (c) 2019 北京柯莱特科技有限公司
 	 **/
 	public static Long getCurrent2TodayEndMillisTime() {
@@ -262,7 +262,7 @@ public class DateUtils {
 	 * @return: java.util.Date
 	 * Created on 2019年08月23日
 	 * @version 1.0
-	 * @author: 贺小波
+	 * @author:
 	 * Copyright (c) 2019 北京柯莱特科技有限公司
 	 **/
 	public static Date getCurrentZero() {
@@ -712,7 +712,7 @@ public class DateUtils {
 	* Created on
 	 * @param list
 	* @return  有重复则返回true
-	* @author 崔春松
+	* @author
 	*/
 	public static boolean compareDateQuantum(List<DateCompare> list){
 		list.sort(Comparator.comparing(DateCompare::getStartTime));
@@ -749,7 +749,7 @@ public class DateUtils {
 	}
 	/**
 	 * 日期格式转换
-	 * @author 陈贵兵
+	 * @author
 	 */
 	public static String formatConvert(String dateStr,String pattern) {
 		if (StringUtils.isEmpty(dateStr)) {

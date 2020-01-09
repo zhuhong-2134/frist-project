@@ -1,6 +1,6 @@
 package com.zhuhong.utils;
 
-import com.fehorizon.commonService.common.constants.SysConstant;
+import com.zhuhong.constants.SysConstant;
 import org.apache.commons.lang3.StringUtils;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;

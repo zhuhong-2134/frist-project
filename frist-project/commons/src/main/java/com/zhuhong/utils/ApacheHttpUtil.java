@@ -1,8 +1,8 @@
 package com.zhuhong.utils;
 
 import com.alibaba.fastjson.JSON;
-import com.fehorizon.commonService.common.constants.SysConstant;
-import com.fehorizon.commonService.model.common.HttpResp;
+import com.zhuhong.common.HttpResp;
+import com.zhuhong.constants.SysConstant;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;

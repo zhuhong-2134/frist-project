@@ -1,6 +1,5 @@
 package com.zhuhong.utils;
 
-import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,19 +15,24 @@ import lombok.Setter;
 @Setter
 public class HttpProxy {
 
-    @ApiModelProperty(value = "是否需要代理, true 需要 false 不需要")
+//    @ApiModelProperty(value = "是否需要代理, true 需要 false 不需要")
+    /**是否需要代理, true 需要 false 不需要**/
     private Boolean proxy = false;
 
-    @ApiModelProperty(value = "代理地址")
+//    @ApiModelProperty(value = "代理地址")
+    /**代理地址**/
     private String proxyUrl;
 
-    @ApiModelProperty(value = "代理端口")
+//    @ApiModelProperty(value = "代理端口")
+    /**代理端口**/
     private Integer proxyPort;
 
-    @ApiModelProperty(value = "用户名")
+//    @ApiModelProperty(value = "用户名")
+    /**用户名**/
     private String userName;
 
-    @ApiModelProperty(value = "密码")
+//    @ApiModelProperty(value = "密码")
+    /**密码**/
     private String password;
 
 

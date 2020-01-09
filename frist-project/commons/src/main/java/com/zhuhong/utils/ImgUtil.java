@@ -1,6 +1,6 @@
 package com.zhuhong.utils;
 
-import com.fehorizon.commonService.model.common.Result;
+import com.zhuhong.common.Result;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.imageio.ImageIO;

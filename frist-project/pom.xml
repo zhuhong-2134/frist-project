@@ -43,7 +43,7 @@
         <cn.afterturn.version>3.2.0</cn.afterturn.version>
         <tomcat.embed.version>8.5.32</tomcat.embed.version>
         <org.jsoup.version>1.11.3</org.jsoup.version>
-        <netty.version>4.1.41.Final</netty.version>
+        <netty.version>4.1.42.Final</netty.version>
         <elasticsearch.version>6.4.2</elasticsearch.version>
     </properties>
 

@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zhuhong.user.model.User">
+<mapper namespace="com.zhuhong.user.dao.UserDao">
+
+    <resultMap id="resultMap" type="com.zhuhong.user.model.User">
+        <id column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="person_name" property="personName"/>
+        <result column="password" property="password"/>
+        <result column="user_code" property="userCode"/>
+        <result column="vip" property="vip"/>
+        <result column="phone" property="phone"/>
+        <result column="mailbox" property="mailbox"/>
+        <result column="state" property="state"/>
+        <result column="var" property="var"/>
+        <result column="del_sta" property="delSta"/>
+        <result column="create_time" property="createTime"/>
+        <result column="create_by" property="createBy"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="update_by" property="updateBy"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_name,person_name,password,user_code,vip,phone,mailbox,state,
+        var,del_sta,create_time,create_by,update_time,update_by
+    </sql>
+
+    <select id="selectUserByUsernameAndPassword" resultType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where
+        user_name = #{userName}
+        and password = #{password}
+    </select>
 
 </mapper>

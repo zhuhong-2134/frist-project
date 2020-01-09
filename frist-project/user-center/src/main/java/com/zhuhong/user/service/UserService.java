@@ -12,5 +12,7 @@ import com.zhuhong.user.model.User;
  * Copyright (c) 2019 北京柯莱特科技有限公司
  **/
 public interface UserService {
+
     Result login(User user);
+
 }

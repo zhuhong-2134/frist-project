@@ -35,4 +35,9 @@ public class UserController {
         Result login = userService.login(user);
         return login;
     }
+
+    @RequestMapping("/register")
+    public Result register() {
+        return null;
+    }
 }

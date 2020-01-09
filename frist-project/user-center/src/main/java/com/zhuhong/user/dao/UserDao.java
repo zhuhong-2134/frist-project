@@ -1,5 +1,6 @@
 package com.zhuhong.user.dao;
 
+import com.zhuhong.user.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -12,4 +13,7 @@ import org.apache.ibatis.annotations.Mapper;
  **/
 @Mapper
 public interface UserDao {
+
+    int selectUserByUsernameAndPassword(User user);
+
 }

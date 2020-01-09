@@ -13,154 +13,31 @@
         <module>commons</module>
     </modules>
 
+    <!-- spring boot 采用 2.0.7 版本 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.0.4.RELEASE</version>
+        <relativePath/>
     </parent>
 
     <properties>
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
-        <mybatis.version>1.3.2</mybatis.version>
-        <fastjson.version>1.2.47</fastjson.version>
-        <commons-collections>4.1</commons-collections>
-        <monitor.version>2.0.2</monitor.version>
-        <swagger.version>2.8.0</swagger.version>
-        <aliyun-sdk-oss.version>2.8.2</aliyun-sdk-oss.version>
-        <aliyun-sdk-core.version>3.2.8</aliyun-sdk-core.version>
-        <aliyun-sdk-dysmsapi.version>1.1.0</aliyun-sdk-dysmsapi.version>
-        <security-oauth2.version>2.3.3.RELEASE</security-oauth2.version>
-        <fastdfs-client.version>1.26.3</fastdfs-client.version>
-        <commons-io.version>2.6</commons-io.version>
-        <guava.version>27.0.1-jre</guava.version>
-        <orika.core.version>1.5.2</orika.core.version>
-        <druid.version>1.1.4</druid.version>
-        <apollo-client.version>1.1.1</apollo-client.version>
-        <httpclient.version>4.5.9</httpclient.version>
-        <httpmime.version>4.5.5</httpmime.version>
-        <commons-jexl3.version>3.1</commons-jexl3.version>
-        <rocketmq.version>4.5.2</rocketmq.version>
-        <cn.afterturn.version>3.2.0</cn.afterturn.version>
-        <tomcat.embed.version>8.5.32</tomcat.embed.version>
-        <org.jsoup.version>1.11.3</org.jsoup.version>
-        <netty.version>4.1.41.Final</netty.version>
-        <elasticsearch.version>6.4.2</elasticsearch.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <junit.version>4.12</junit.version>
+        <!-- spring cloud 采用 Finchley.SR2 版本 -->
+        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>${commons-collections}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.tobato</groupId>
-            <artifactId>fastdfs-client</artifactId>
-            <version>${fastdfs-client.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons-io.version}</version>
-        </dependency>
-        <!-- googel -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.spring4all</groupId>
-            <artifactId>spring-boot-starter-swagger</artifactId>
-        </dependency>
-    </dependencies>
-
+    <!--依赖声明-->
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.version}</version>
-            </dependency>
-            <!-- orika -->
-            <dependency>
-                <groupId>ma.glasnost.orika</groupId>
-                <artifactId>orika-core</artifactId>
-                <version>${orika.core.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>com.google.guava</groupId>
-                        <artifactId>guava</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-bean-validators</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.ctrip.framework.apollo</groupId>
-                <artifactId>apollo-client</artifactId>
-                <version>${apollo-client.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-jexl3</artifactId>
-                <version>${commons-jexl3.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.rocketmq</groupId>
-                <artifactId>rocketmq-client</artifactId>
-                <version>${rocketmq.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
-                <version>${netty.version}</version>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

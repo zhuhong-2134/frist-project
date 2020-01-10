@@ -25,6 +25,42 @@
         var,del_sta,create_time,create_by,update_time,update_by
     </sql>
 
+    <insert id="save" parameterType="com.zhuhong.user.model.User">
+        INSERT INTO(
+            id,
+            user_name,
+            person_name,
+            password,
+            user_code,
+            vip,
+            phone,
+            mailbox,
+            state,
+            var,
+            del_sta,
+            create_time,
+            create_by,
+            update_time,
+            update_by
+        )values (
+            #{id},
+            #{userName}
+            #{personName}
+            #{password}
+            #{userCode}
+            #{vip}
+            #{phone}
+            #{mailbox}
+            #{state}
+            #{var}
+            #{delSta}
+            #{createTime}
+            #{createBy}
+            #{updateTime}
+            #{updateBy}
+        )
+    </insert>
+
     <select id="selectUserByUsernameAndPassword" resultType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>

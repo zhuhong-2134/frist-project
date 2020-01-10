@@ -26,9 +26,9 @@ public class UserController {
     private UserService userService;
 
     /**
-     *
-     * @param user
-     * @return
+     * 登录
+     * @param user 请求参数
+     * @return 返回成功或失败
      */
     @RequestMapping("/login")
     public Result login(@RequestBody User user) {
@@ -36,8 +36,14 @@ public class UserController {
         return login;
     }
 
+    /**
+     * 注册
+     * @param user 请求参数
+     * @return 返回成功或失败
+     */
     @RequestMapping("/register")
-    public Result register() {
-        return null;
+    public Result register(@RequestBody User user) {
+        Result result =userService.register(user);
+        return result;
     }
 }

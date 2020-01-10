@@ -16,4 +16,5 @@ public interface UserDao {
 
     int selectUserByUsernameAndPassword(User user);
 
+    int save(User user);
 }

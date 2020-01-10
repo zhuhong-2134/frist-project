@@ -1,4 +1,4 @@
-package com.zhuhong.user.contreller;
+package com.zhuhong.user.contreller.redirct;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

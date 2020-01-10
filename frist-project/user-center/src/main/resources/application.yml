@@ -2,15 +2,15 @@ app:
   id: user-center
 
 server:
-  port: 8080
+  port: 10086
 
 logging:
   config: classpath:logback.xml
 
 spring:
   datasource:
-    url: jdbc:mysql://172.16.85.126/my-test?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
-    username: ydhx
+    url: jdbc:mysql://182.92.232.252/user?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
@@ -35,29 +35,45 @@ spring:
     static-path-pattern: /**
   resources:
     static-locations: classpath:/static/
+  redis:
+    host: 182.92.232.252
+    port: 6383
+    password:
+    timeout: 5s
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+    mvc:
+      servlet:
+        load-on-startup: 1
+    aop:
+      proxy-target-class: true
 
-jetcache:
-  statIntervalMinutes: 1 #统计间隔
-  areaInCacheName: false
-  local:
-    default: #默认area
-      type: caffeine
-      keyConvertor: fastjson
-  remote:
-    default:
-      type: redis.lettuce #使用lettuce
-      keyConvertor: fastjson
-      valueEncoder: java
-      valueDecoder: java
-      poolConfig:
-        minIdle: 1
-        maxIdle: 50
-        maxTotal: 1000
-        maxWait: 1000
+#jetcache:
+#  statIntervalMinutes: 1 #统计间隔
+#  areaInCacheName: false
+#  local:
+#    default: #默认area
+#      type: caffeine
+#      keyConvertor: fastjson
+#  remote:
+#    default:
+#      type: redis.lettuce #使用lettuce
+#      keyConvertor: fastjson
+#      valueEncoder: java
+#      valueDecoder: java
+#      poolConfig:
+#        minIdle: 1
+#        maxIdle: 50
+#        maxTotal: 1000
+#        maxWait: 1000
       # uri: ['redis://password@192.168.14.231:6379/0','redis://password@192.168.14.232:6379/0','redis://password@192.168.14.233:6379/0']
-      uri:
-        - redis://127.0.0.1:6379/5  #redis://密码@IP:端口/库
-      readFrom: masterPreferred #master优先
+#      uri:
+#        - redis://127.0.0.1:6379/5  #redis://密码@IP:端口/库
+#      readFrom: masterPreferred #master优先
 
 mybatis-plus:
   type-aliases-package: com.zhuhong.user.entity

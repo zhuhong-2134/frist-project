@@ -21,6 +21,9 @@ public enum ErrorCodeEnum {
     USERNAME_IS_NOT_NULL(100003,"账号不能为空"),
 
     PASSWORD_USERNAME_IS_INCORRECT(100004,"账号或密码不正确"),
+
+    PHONE_INCORRECT_FORMAT(100005,"手机号格式不正确"),
+
     ;
 
 

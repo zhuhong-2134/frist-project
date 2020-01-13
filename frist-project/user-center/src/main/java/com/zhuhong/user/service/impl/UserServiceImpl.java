@@ -44,8 +44,8 @@ public class UserServiceImpl implements UserService {
         //密码加密
         String passw = MD5Util.MD(user.getPassword());
         user.setPassword(passw);
-        int result = userDao.selectUserByUsernameAndPassword(user);
-        if (result != SysConstant.ONE) {
+        User result = userDao.selectUserByUsernameAndPassword(user);
+        if (result == null) {
             throw new BusinessException(ErrorCodeEnum.PASSWORD_USERNAME_IS_INCORRECT.getDescription(), ErrorCodeEnum.PASSWORD_USERNAME_IS_INCORRECT.getCode());
         }
         return Result.success(result);

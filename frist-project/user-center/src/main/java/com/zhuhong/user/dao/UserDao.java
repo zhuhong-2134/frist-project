@@ -13,7 +13,7 @@ import org.apache.ibatis.annotations.Mapper;
  **/
 public interface UserDao {
 
-    int selectUserByUsernameAndPassword(User user);
+    User selectUserByUsernameAndPassword(User user);
 
     int save(User user);
 }

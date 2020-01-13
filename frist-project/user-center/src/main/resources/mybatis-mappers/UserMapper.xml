@@ -22,12 +22,12 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,sex,user_name,person_name,password,user_code,vip,phone,mailbox,state,
+        id,user_name,person_name,password,user_code,vip,phone,mailbox,state,
         var,del_sta,create_time,create_by,update_time,update_by
     </sql>
 
     <insert id="save" parameterType="com.zhuhong.user.model.User">
-        INSERT INTO(
+        INSERT INTO t_user(
             id,
             sex,
             user_name,
@@ -64,10 +64,11 @@
         )
     </insert>
 
-    <select id="selectUserByUsernameAndPassword" resultType="java.lang.Integer">
+    <select id="selectUserByUsernameAndPassword" parameterType="com.zhuhong.user.model.User"
+            resultType="com.zhuhong.user.model.User">
         select
         <include refid="Base_Column_List"/>
-        from user
+        from t_user
         where
         user_name = #{userName}
         and password = #{password}

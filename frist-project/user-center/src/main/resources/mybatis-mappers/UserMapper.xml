@@ -4,6 +4,7 @@
 
     <resultMap id="resultMap" type="com.zhuhong.user.model.User">
         <id column="id" property="id"/>
+        <result column="sex" property="sex"/>
         <result column="user_name" property="userName"/>
         <result column="person_name" property="personName"/>
         <result column="password" property="password"/>
@@ -21,13 +22,14 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,user_name,person_name,password,user_code,vip,phone,mailbox,state,
+        id,sex,user_name,person_name,password,user_code,vip,phone,mailbox,state,
         var,del_sta,create_time,create_by,update_time,update_by
     </sql>
 
     <insert id="save" parameterType="com.zhuhong.user.model.User">
         INSERT INTO(
             id,
+            sex,
             user_name,
             person_name,
             password,
@@ -44,19 +46,20 @@
             update_by
         )values (
             #{id},
-            #{userName}
-            #{personName}
-            #{password}
-            #{userCode}
-            #{vip}
-            #{phone}
-            #{mailbox}
-            #{state}
-            #{var}
-            #{delSta}
-            #{createTime}
-            #{createBy}
-            #{updateTime}
+            #{sex},
+            #{userName},
+            #{personName},
+            #{password},
+            #{userCode},
+            #{vip},
+            #{phone},
+            #{mailbox},
+            #{state},
+            #{var},
+            #{delSta},
+            #{createTime},
+            #{createBy},
+            #{updateTime},
             #{updateBy}
         )
     </insert>

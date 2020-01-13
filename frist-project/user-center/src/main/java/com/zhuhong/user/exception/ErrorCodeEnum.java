@@ -24,6 +24,9 @@ public enum ErrorCodeEnum {
 
     PHONE_INCORRECT_FORMAT(100005,"手机号格式不正确"),
 
+    PASSWORD_IS_NOT_SAME(100006,"两次密码输入不一致，请重新输入"),
+
+    PHONE_IS_NOT_NULL(100007,"手机号不能为空"),
     ;
 
 

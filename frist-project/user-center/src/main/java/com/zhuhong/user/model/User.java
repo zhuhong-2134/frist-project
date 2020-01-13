@@ -18,10 +18,19 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = -2612211407584244194L;
 
+    private String repassword;
+
+    /**==↓==数据库存储字段==↓==*/
+
     /**
      * 主键
      */
     private Long id;
+
+    /**
+     * 性别：  0  女  1 男
+     */
+    private Integer sex;
 
     /**
      * 账号

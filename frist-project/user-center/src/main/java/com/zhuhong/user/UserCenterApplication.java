@@ -5,6 +5,7 @@ import com.alicp.jetcache.anno.config.EnableMethodCache;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 /**
  * <p>Description: [启动类]</p>
@@ -18,6 +19,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableMethodCache(basePackages = { "com.zhuhong.user" })
 @SpringBootApplication
 @MapperScan("com.zhuhong.user.dao")
+@EntityScan("com.zhuhong.user.model")
 public class UserCenterApplication {
 
 	public static void main(String[] args) {

@@ -2,13 +2,12 @@ package com.zhuhong.user.service.impl;
 
 import com.zhuhong.common.Result;
 import com.zhuhong.constants.SysConstant;
-import com.zhuhong.enums.UserCodeEnum;
 import com.zhuhong.user.dao.UserDao;
 import com.zhuhong.user.exception.BusinessException;
 import com.zhuhong.user.exception.ErrorCodeEnum;
 import com.zhuhong.user.model.User;
 import com.zhuhong.user.service.UserService;
-import com.zhuhong.utils.CodeGenerateUtil;
+import com.zhuhong.utils.DateUtils;
 import com.zhuhong.utils.MD5Util;
 import com.zhuhong.utils.PhoneUtil;
 import org.apache.commons.lang3.StringUtils;
@@ -23,14 +22,14 @@ import org.springframework.stereotype.Service;
  * @version 1.0
  * Copyright (c) 2019 北京柯莱特科技有限公司
  **/
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
-
-    @Autowired
-    private CodeGenerateUtil codeGenerateUtil;
+//
+//    @Autowired
+//    private CodeGenerateUtil codeGenerateUtil;
 
     // 用户登陆
     @Override
@@ -63,6 +62,8 @@ public class UserServiceImpl implements UserService {
 
         user.setPassword(passw);
 
+        fillAttribute(user);
+
         int result = userDao.save(user);
 
         return null;
@@ -70,8 +71,14 @@ public class UserServiceImpl implements UserService {
 
     //校验参数
     private void check(User user) {
+        if (StringUtils.isBlank(user.getPhone())) {
+            throw new BusinessException(ErrorCodeEnum.PHONE_IS_NOT_NULL.getDescription(), ErrorCodeEnum.PHONE_IS_NOT_NULL.getCode());
+        }
         if (!PhoneUtil.checkPhone(user.getPhone())) {
             throw new BusinessException(ErrorCodeEnum.PHONE_INCORRECT_FORMAT.getDescription(), ErrorCodeEnum.PHONE_INCORRECT_FORMAT.getCode());
+        }
+        if (!user.getPassword().equalsIgnoreCase(user.getRepassword())) {
+            throw new BusinessException(ErrorCodeEnum.PASSWORD_IS_NOT_SAME.getDescription(), ErrorCodeEnum.PASSWORD_IS_NOT_SAME.getCode());
         }
         if (StringUtils.isBlank(user.getUserName())) {
             throw new BusinessException(ErrorCodeEnum.USERNAME_IS_NOT_NULL.getDescription(), ErrorCodeEnum.USERNAME_IS_NOT_NULL.getCode());
@@ -81,7 +88,11 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    //属性填充
     private void fillAttribute(User user) {
-        user.setUserCode(codeGenerateUtil.generateCodeYmdSix(UserCodeEnum.USERCODE.getDescription()));
+//        user.setUserCode(codeGenerateUtil.generateCodeYmdSix(UserCodeEnum.USERCODE.getDescription()));
+        user.setCreateTime(DateUtils.getCurrentZero());
+        user.setDelSta(SysConstant.ZERO);
+        user.setState(SysConstant.ONE);
     }
 }

@@ -47,10 +47,10 @@ public class RedirctController {
 		return url;
 	}
 
-//	/**
-//	 * 点击登陆跳转页面
-//	 * @return
-//	 */
-//	@GetMapping("/onclick/login")
-//	public String onclickLogin(){return "login";}
+	/**
+	 * 点击登陆跳转页面
+	 * @return
+	 */
+	@GetMapping("/onclick/login")
+	public String onclickLogin(){return "login";}
 }

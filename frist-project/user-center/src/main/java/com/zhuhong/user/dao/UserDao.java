@@ -3,6 +3,8 @@ package com.zhuhong.user.dao;
 import com.zhuhong.user.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * <p>Description: [Dao层接口]</p>
  * Created on 2020-01-09
@@ -16,4 +18,8 @@ public interface UserDao {
     User selectUserByUsernameAndPassword(User user);
 
     int save(User user);
+
+    Integer selectCount(User user);
+
+    List<User> selectUserList(User user);
 }

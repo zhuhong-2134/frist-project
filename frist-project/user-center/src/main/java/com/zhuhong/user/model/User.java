@@ -1,5 +1,6 @@
 package com.zhuhong.user.model;
 
+import com.zhuhong.common.QueryPage;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -14,7 +15,7 @@ import java.util.Date;
  * Copyright (c) 2019 北京柯莱特科技有限公司
  **/
 @Data
-public class User implements Serializable {
+public class User extends QueryPage implements Serializable  {
 
     private static final long serialVersionUID = -2612211407584244194L;
 

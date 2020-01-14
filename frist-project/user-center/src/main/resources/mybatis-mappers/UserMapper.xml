@@ -74,4 +74,20 @@
         and password = #{password}
     </select>
 
+    <select id="selectCount" resultType="java.lang.Integer"  parameterType="com.zhuhong.user.model.User">
+        select count(1) from t_user
+        where
+        state = #{state}
+        and del_sta = #{delSta}
+    </select>
+
+    <select id="selectUserList" resultType="com.zhuhong.user.model.User" parameterType="com.zhuhong.user.model.User">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+        where
+        state = #{state}
+        and del_sta = #{delSta}
+    </select>
+
 </mapper>

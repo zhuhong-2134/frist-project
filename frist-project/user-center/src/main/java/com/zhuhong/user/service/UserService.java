@@ -1,7 +1,10 @@
 package com.zhuhong.user.service;
 
+import com.zhuhong.common.PageResult;
 import com.zhuhong.common.Result;
 import com.zhuhong.user.model.User;
+
+import java.util.List;
 
 /**
  * <p>Description: [用户]</p>
@@ -16,4 +19,6 @@ public interface UserService {
     Result login(User user);
 
     Result register(User user);
+
+    PageResult<List<User>> selectUserList(User user);
 }

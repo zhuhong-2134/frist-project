@@ -1,5 +1,6 @@
 package com.zhuhong.user.service.impl;
 
+import com.zhuhong.common.PageResult;
 import com.zhuhong.common.Result;
 import com.zhuhong.constants.SysConstant;
 import com.zhuhong.user.dao.UserDao;
@@ -13,6 +14,8 @@ import com.zhuhong.utils.PhoneUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>Description: []</p>
@@ -67,6 +70,19 @@ public class UserServiceImpl implements UserService {
         int result = userDao.save(user);
 
         return null;
+    }
+
+    //分页查询用户列表
+    @Override
+    public PageResult<List<User>> selectUserList(User user) {
+        user.setState(SysConstant.ONE);
+        user.setDelSta(SysConstant.ZERO);
+        Integer count = userDao.selectCount(user);
+        List<User> users = userDao.selectUserList(user);
+        PageResult result = new PageResult();
+        result.setTotal(count);
+        result.setData(users);
+        return result;
     }
 
     //校验参数

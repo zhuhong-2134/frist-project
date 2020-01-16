@@ -23,7 +23,7 @@ import java.util.List;
  * Copyright (c) 2019 北京柯莱特科技有限公司
  **/
 @Slf4j
-@RequestMapping("user")
+@RequestMapping("/user")
 @RestController
 public class UserController {
 

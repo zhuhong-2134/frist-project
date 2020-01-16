@@ -14,7 +14,9 @@
         padding: 0;
     }
     body {
-        background: url("../static/images/jpg.jpg") no-repeat;
+        /*background: linear-gradient(120deg, #3498db, #8e44ad, #3498db);*/
+        background: url("../static/images/background2.jpg") no-repeat;
+        background-size: cover;
     }
 
     .box {
@@ -126,11 +128,48 @@
 
     <h1 class="footBtn">
         <span></span>
-        <button>提交</button>
+        <button id="commit">提交</button>
     </h1>
 
-
-
 </body>
+<script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>
+<script>
+    var obj = {
+        id:111,
+        name:111
+    };
+    var commit = document.getElementById("commit");
+    commit.onclick = function (ev) {
+        $.ajax({
+            type:"POST",
+            url:"/user/register",
+            data:obj,
+            dateType:"json",
+            success:function (data) {
+                window.location.href = "onclick/login";
+            },
+            error:function (err) {
+
+            }
+        })
+    };
+
+    $(function () {
+        $("commit").click(function () {
+            $.ajax({
+                type:"POST",
+                url:"/user/register",
+                data:{},
+                dateType:"json",
+                success: function (data) {
+                    // window.location.href = "onclick/login";
+                },
+                error:function (err) {
+
+                }
+            })
+        })
+    })
+</script>
 
 </html>
